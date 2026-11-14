@@ -23,7 +23,7 @@ Bridge Step = DATATABLE(
 | Measure | What it shows | My value |
 |---|---|---|
 | Total Spend | Gross Part D spending (2024) | $288.7 B |
-| Total Claims | Prescription fills (2024) | $1712 M |
+| Total Claims | Prescription fills (2024) | $1.71 B |
 | Spend per Claim | Average cost per fill (2024) | $168.65 |
 | Spend YoY % | Growth vs. prior year (2024) | 4.66% |
 
@@ -105,8 +105,8 @@ Change in spend = (units change x base price) + (price change x current units), 
 | Price Effect | Change from higher or lower spending per unit | - $498.1 M |
 | Volume Effect | Change from more or fewer units | $63.73 B |
 | New Drug Effect | Drugs with spending in 2024 but not 2020 | $31.34 B |
-| Exited Drug Effect | Drugs with spending in 2020 but not 2024 | $ 0 |
-| Other Effect | Leftover (missing units) | $213.6 K (__% of change) |
+| Exited Drug Effect | Drugs with spending in 2020 but not 2024 | $0 |
+| Other Effect | Leftover (missing units) | $213.6 K (<0.01% of change) |
 
 ~~~dax
 Price Effect =
