@@ -1,5 +1,4 @@
 # Data Quality Log
-
 | # | Check | Result | Action taken |
 |---|---|---|---|
 | 1 | Spending file: total rows vs. "Overall" rows | 14,536 total, 3,625 Overall | Kept Overall to avoid double counting |
