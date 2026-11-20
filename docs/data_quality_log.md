@@ -14,3 +14,12 @@
 | dim_drug | Dimension | one drug | DrugKey | Drug Label, Brand Name, Generic Name, Drug Type, Source Type, Negotiation Round, Opioid, Antibiotic, Antipsychotic, Found In |
 | dim_year | Dimension | one year | Year | Year |
 | dim_state | Dimension | one state or territory | State | Area Type |
+
+# Savings Exclusions
+Before exclusions: $16.7B
+After exclusions: $14.3B
+Medications excluded: 
+1. ABILIFY MAINTENA|ARIPIPRAZOLE
+2. COMBIVENT RESPIMAT|IPRATROPIUM/ALBUTEROL SULFATE
+3. OXYCONTIN|OXYCODONE HCL
+4. SPIRIVA RESPIMAT|TIOTROPIUM BROMIDE
