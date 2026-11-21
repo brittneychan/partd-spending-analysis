@@ -36,7 +36,7 @@ The raw datasets aren't included in the repo due to size. They can be downloaded
 ## Approach
 - **Power Query**: kept CMS "overall" rows to avoid double counting, unpivoted ~40 year columns into drug-year fact table, built a cross-file drug key, classified brand, generic, and multi-source brand drugs, and flagged drugs selected for Medicare price selection
 - **Star schema**: 2 fact tables at different grains (drug-year, drug-state) sharing a drug dimension
-- **DAX**: price-v-volume decomposition of spending change, base/current year selections, generic substitution savings with a what-if parameter/
+- **DAX**: price-v-volume decomposition of spending change, base/current year selections, generic substitution savings with a what-if parameter.
 
 See [dax_measures.md](docs/dax_measures.md).
 
@@ -51,3 +51,16 @@ See [dax_measures.md](docs/dax_measures.md).
 - **All drugs in the spending file matched the geography file.** (0 unmatched)
 
 Full log: [docs/data_quality_log.md](docs/data_quality_log.md)
+
+## Limitations
+- Spending is gross, before manufacturer rebates, so real brand vs. generic savings may be smaller.
+- Totals aren't adjusted for Part D enrollment changes, so this is total spending, not per member cost.
+- CMS only includes drugs with 11+ claims in 2024, so drugs that aren't used anymore are missing from the 2020 total.
+- The brand vs. generic rule may not be 100% accurate as names vary.
+- Savings assume comparable dosage units.
+- The state view is 2024 only and based on prescriber location rather than patient location.
+
+## Files
+- powerbi/PartD_Spending.pbix: report (open in Power BI Desktop)
+- PartD_Spending_Dashboard.pdf: all 4 pages
+- docs/: data dictionary, data quality log, DAX measures, screenshots
