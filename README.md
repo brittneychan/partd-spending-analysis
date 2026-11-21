@@ -36,7 +36,8 @@ The raw datasets aren't included in the repo due to size. They can be downloaded
 ## Approach
 - **Power Query**: kept CMS "overall" rows to avoid double counting, unpivoted ~40 year columns into drug-year fact table, built a cross-file drug key, classified brand, generic, and multi-source brand drugs, and flagged drugs selected for Medicare price selection
 - **Star schema**: 2 fact tables at different grains (drug-year, drug-state) sharing a drug dimension
-- **DAX**: price-v-volume decomposition of spending change, base/current year selections, generic substitution savings with a what-if parameter
+- **DAX**: price-v-volume decomposition of spending change, base/current year selections, generic substitution savings with a what-if parameter/
+
 See [dax_measures.md](docs/dax_measures.md).
 
 ![Model](docs/screenshots/model.png)
@@ -48,4 +49,5 @@ See [dax_measures.md](docs/dax_measures.md).
 - **Fixed generic classification**: my first rule (brand name = generic name) gave a 73.9% generic fill rate, which is below the ~90% published by MEDPAC. ER generics such as "Metformic HCL ER" were being counted as brands, but after fixing this, the rate was 87.4%.
 - **Formulation mismatches were excluded from savings.** Brand to generic price rations over 50x were flagged as unfair comparisons: Abilify Maintena, Combivent Respimat and Spiriva Respimat, and OxyContin (ER vs IR). Savings at 100% fell from $16.4B to $14.3B.
 - **All drugs in the spending file matched the geography file.** (0 unmatched)
+
 Full log: [docs/data_quality_log.md](docs/data_quality_log.md)
